@@ -13,9 +13,10 @@ Main modification lies in `cudaRenderer.cu`.
 
 However, when there are too many circles, it can be unacceptable for a thread to check every circle. So, `kernelRenderCircles` proposes a new machanism. In this function, each thread is also responsible for one pixel and thus a block of threads is corresponding to a box area in the picture. Before rendering, threads in the same block work together to figure out circles who may contribute to this area and record them in shared memory. Then they traverse those circles and calcute values for this pixel.
 
-## Result
+## Examples
 
-
+![rand10k](./rand10k.jpg)
+![snow](./snow.jpg)
 
 ## Score
 
